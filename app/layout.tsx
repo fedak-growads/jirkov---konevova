@@ -52,13 +52,20 @@ export const metadata: Metadata = {
     description: propertyDescriptionLong,
     locale: "cs_CZ",
     type: "website",
-    images: [property.heroImage],
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 675,
+        alt: propertyTitle,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${propertyTitle} – ${formattedPrice}`,
     description: propertyDescriptionShort,
-    images: [property.heroImage],
+    images: ["/og-image.jpg"],
   },
 };
 
