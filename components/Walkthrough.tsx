@@ -51,7 +51,7 @@ export default function Walkthrough() {
                 alt={s.title}
                 fill
                 sizes="100vw"
-                className="object-cover"
+                className="object-contain md:object-cover"
                 priority={i === 0}
               />
             </div>
@@ -97,25 +97,25 @@ export default function Walkthrough() {
             className="min-h-[85svh] flex items-end px-6 md:px-12 pb-24 md:pb-28"
           >
             <div
-              className={`max-w-lg transition-all duration-500 ease-out ${
+              className={`max-w-xs md:max-w-md transition-all duration-500 ease-out ${
                 i === active
                   ? "opacity-100 translate-y-0 scale-100"
                   : "opacity-50 translate-y-3 scale-[0.98]"
               }`}
             >
-              <div className="rounded-2xl bg-black/45 backdrop-blur-md border border-white/15 shadow-2xl p-5 md:p-7">
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="font-display text-5xl md:text-6xl text-white leading-none tabular-nums">
+              <div className="rounded-xl bg-black/45 backdrop-blur-md border border-white/15 shadow-2xl p-4 md:p-5">
+                <div className="flex items-center gap-2.5 mb-2">
+                  <span className="font-display text-2xl md:text-4xl text-white leading-none tabular-nums">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="text-sm md:text-base font-semibold uppercase tracking-[0.16em] text-teal-mid">
+                  <span className="text-[10px] md:text-xs font-semibold uppercase tracking-[0.16em] text-teal-mid">
                     {s.step}
                   </span>
                 </div>
-                <h3 className="font-display text-[1.75rem] md:text-5xl text-white mb-3 leading-[1.1]">
+                <h3 className="font-display text-lg md:text-3xl text-white mb-1.5 leading-tight">
                   {s.title}
                 </h3>
-                <p className="text-white/90 leading-relaxed text-lg md:text-xl">
+                <p className="text-white/90 leading-relaxed text-sm md:text-base">
                   {s.body}
                 </p>
               </div>

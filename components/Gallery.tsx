@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, useRef } from "react";
 import Image from "next/image";
 import { property } from "@/data/property";
 import Reveal from "./Reveal";
@@ -9,6 +9,32 @@ export default function Gallery() {
   const categories = property.photoCategories;
   const [activeCategory, setActiveCategory] = useState(0);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const touchStartX = useRef<number | null>(null);
+  const touchStartY = useRef<number | null>(null);
+  const swipedRef = useRef(false);
+
+  const showPrev = () =>
+    setOpenIndex((i) => (i === null ? null : (i - 1 + allPhotos.length) % allPhotos.length));
+  const showNext = () =>
+    setOpenIndex((i) => (i === null ? null : (i + 1) % allPhotos.length));
+
+  function lbTouchStart(e: React.TouchEvent) {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+    swipedRef.current = false;
+  }
+  function lbTouchEnd(e: React.TouchEvent) {
+    if (touchStartX.current === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    const dy = e.changedTouches[0].clientY - (touchStartY.current ?? 0);
+    if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) {
+      swipedRef.current = true;
+      if (dx < 0) showNext();
+      else showPrev();
+    }
+    touchStartX.current = null;
+    touchStartY.current = null;
+  }
 
   // Flatten all photos for lightbox navigation across full set
   const allPhotos = useMemo(
@@ -130,9 +156,11 @@ export default function Gallery() {
           aria-modal="true"
           aria-label="Detail fotografie"
           onClick={(e) => {
-            if (e.target === e.currentTarget) setOpenIndex(null);
+            if (e.target === e.currentTarget && !swipedRef.current) setOpenIndex(null);
           }}
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 animate-[fadeIn_0.2s_ease-out]"
+          onTouchStart={lbTouchStart}
+          onTouchEnd={lbTouchEnd}
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 animate-[fadeIn_0.2s_ease-out] touch-pan-y"
         >
           <button
             type="button"
@@ -182,8 +210,13 @@ export default function Gallery() {
             />
           </div>
 
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-xs text-white/70 tabular-nums">
-            {openIndex + 1} / {allPhotos.length}
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-xs text-white/70 text-center">
+            <span className="tabular-nums">
+              {openIndex + 1} / {allPhotos.length}
+            </span>
+            <span className="md:hidden block text-[11px] text-white/50 mt-0.5">
+              ‹ přejeďte pro další ›
+            </span>
           </div>
         </div>
       )}
