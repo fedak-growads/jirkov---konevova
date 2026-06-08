@@ -105,7 +105,7 @@ export const property = {
   descriptionEyebrow: "O nemovitosti",
   descriptionTitle: "Byt 3+1 po rekonstrukci v nejlepší lokalitě Jirkova",
   descriptionLead:
-    "Rodinný byt 3+1 o ploše 63 m² ve 2. patře cihlového domu, osobní vlastnictví. Po rekonstrukci, s balkonem, prostorným sklepem a vlastní dílnou. Jedna z nejvyhledávanějších lokalit Jirkova.",
+    "Rodinný byt 3+1 o ploše 63 m² ve 2. patře cihlového domu, osobní vlastnictví. Po rekonstrukci, s balkonem a prostorným sklepem. V domě navíc možnost využití společné dílny. Jedna z nejvyhledávanějších lokalit Jirkova.",
   descriptionBlocks: [
     {
       icon: "👨‍👩‍👧‍👦",
@@ -115,7 +115,7 @@ export const property = {
     {
       icon: "📐",
       heading: "Dispozice (63 m²)",
-      body: "Obývací pokoj 20,7 m², dva pokoje (12,6 a 10,2 m²), kuchyně 7,4 m², předsíň 6,3 m², koupelna 5,3 m² a šatna 2,8 m². K bytu balkon, prostorný sklep a vlastní dílna. Půdorys v galerii.",
+      body: "Obývací pokoj 20,7 m², dva pokoje (12,6 a 10,2 m²), kuchyně 7,4 m², předsíň 6,3 m², koupelna 5,3 m² a šatna 2,8 m². K bytu balkon a prostorný sklep, v domě navíc možnost využití společné dílny. Půdorys v galerii.",
     },
     {
       icon: "🧱",
@@ -159,7 +159,7 @@ export const property = {
     { value: "3+1", label: "Dispozice" },
     { value: "Osobní", label: "Vlastnictví" },
     { value: "Balkon", label: "+ prostorný sklep" },
-    { value: "Dílna", label: "vlastní dílna" },
+    { value: "Dílna", label: "možnost využití v domě" },
     { value: "1 054 Kč", label: "Fond oprav / měsíc" },
     { value: "Zahrada", label: "bazén · trampolína · hřiště" },
   ] as Parameter[],
@@ -206,8 +206,8 @@ export const property = {
         },
         {
           icon: "🧰",
-          title: "Prostorný sklep + dílna",
-          description: "Úložný prostor navíc a vlastní dílna — kutilové ocení.",
+          title: "Prostorný sklep + dílna v domě",
+          description: "K bytu náleží prostorný sklep. V domě je navíc možnost využití společné dílny — kutilové ocení.",
         },
       ],
     },
