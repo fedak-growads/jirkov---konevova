@@ -89,7 +89,7 @@ export const property = {
   // Slideshow v hero (swipe na mobilu, auto-rotace, Ken Burns).
   heroSlides: [
     { src: "/photos/hero-drone.jpg", alt: "Cihlový dům s výhledem na Krušné hory — letecký pohled" },
-    { src: "/photos/zahrada-1.jpg", alt: "Společná zahrada s bazénem a trampolínou" },
+    { src: "/photos/zahrada-3.jpg", alt: "Zahrada s pergolou" },
     { src: "/photos/01.jpg", alt: "Obývací pokoj s jídelním koutem" },
     { src: "/photos/03.jpg", alt: "Kuchyně po rekonstrukci" },
   ],
@@ -98,7 +98,7 @@ export const property = {
     { icon: "📐", label: "63 m²" },
     { icon: "🏠", label: "3+1" },
     { icon: "🧱", label: "Cihlový dům" },
-    { icon: "🌳", label: "Zahrada s bazénem" },
+    { icon: "🌳", label: "Zahrada s pergolou" },
   ],
 
   // ─── Description ──────────────────────────────────────
@@ -124,8 +124,8 @@ export const property = {
     },
     {
       icon: "🌳",
-      heading: "Společná zahrada — ráj pro rodiny s dětmi",
-      body: "K domu patří krásná velká zahrada s bazénem, trampolínou, dětským hřištěm i altánem s posezením a dřevníkem. Zázemí, které děti milují. Zahrada je ve vlastnictví města, dům ji má pronajatou (hrazeno z fondu oprav) — využíváte ji bez dalších poplatků navíc.",
+      heading: "Zahrada s pergolou",
+      body: "K domu patří zahrada s pergolou — příjemné posezení venku. Zahrada je ve vlastnictví města, dům ji má pronajatou (hrazeno z fondu oprav) — využíváte ji bez dalších poplatků navíc.",
     },
     {
       icon: "📍",
@@ -161,7 +161,7 @@ export const property = {
     { value: "Balkon", label: "+ prostorný sklep" },
     { value: "Dílna", label: "možnost využití v domě" },
     { value: "1 054 Kč", label: "Fond oprav / měsíc" },
-    { value: "Zahrada", label: "bazén · trampolína · hřiště" },
+    { value: "Zahrada", label: "s pergolou" },
   ] as Parameter[],
 
   // ─── Benefits (3 categories) ──────────────────────────
@@ -226,8 +226,8 @@ export const property = {
         },
         {
           icon: "🌳",
-          title: "Společná zahrada pro rodiny",
-          description: "Bazén, trampolína, dětské hřiště i altán — zázemí, které děti milují. Pronajaté od města, hrazeno z fondu oprav.",
+          title: "Zahrada s pergolou",
+          description: "Příjemné posezení venku pod pergolou. Zahrada pronajatá od města, hrazeno z fondu oprav.",
         },
       ],
     },
@@ -300,10 +300,10 @@ export const property = {
         body: "Venkovní prostor přímo u bytu s výhledem do zeleně.",
       },
       {
-        src: "/photos/zahrada-1.jpg",
-        step: "A o víkendu ven",
-        title: "Společná zahrada",
-        body: "Bazén, trampolína, dětské hřiště a altán — zázemí, které děti milují.",
+        src: "/photos/zahrada-3.jpg",
+        step: "Posezení venku",
+        title: "Zahrada s pergolou",
+        body: "Příjemné venkovní posezení pod pergolou.",
       },
     ] as WalkStep[],
   },
@@ -329,9 +329,7 @@ export const property = {
       label: "Balkon a zahrada",
       photos: [
         { src: "/photos/balkon-1.jpg", alt: "Balkon s výhledem do zeleně" },
-        { src: "/photos/zahrada-1.jpg", alt: "Společná zahrada — bazén a trampolína" },
-        { src: "/photos/zahrada-2.jpg", alt: "Dětské hřiště na zahradě" },
-        { src: "/photos/zahrada-3.jpg", alt: "Altán s posezením a dřevník" },
+        { src: "/photos/zahrada-3.jpg", alt: "Zahrada s pergolou" },
       ],
     },
     {
