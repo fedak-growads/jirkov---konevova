@@ -320,9 +320,12 @@ export const property = {
       ],
     },
     {
-      label: "Balkon",
+      label: "Balkon a zahrada",
       photos: [
         { src: "/photos/balkon-1.jpg", alt: "Balkon s výhledem do zeleně" },
+        { src: "/photos/zahrada-1.jpg", alt: "Zahrada u domu" },
+        { src: "/photos/zahrada-2.jpg", alt: "Zelená plocha u domu" },
+        { src: "/photos/zahrada-3.jpg", alt: "Zahrada s pergolou" },
       ],
     },
     {
