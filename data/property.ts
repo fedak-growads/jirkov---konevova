@@ -89,7 +89,7 @@ export const property = {
   // Slideshow v hero (swipe na mobilu, auto-rotace, Ken Burns).
   heroSlides: [
     { src: "/photos/hero-drone.jpg", alt: "Cihlový dům s výhledem na Krušné hory — letecký pohled" },
-    { src: "/photos/zahrada-3.jpg", alt: "Zahrada s pergolou" },
+    { src: "/photos/balkon-1.jpg", alt: "Balkon s výhledem do zeleně" },
     { src: "/photos/01.jpg", alt: "Obývací pokoj s jídelním koutem" },
     { src: "/photos/03.jpg", alt: "Kuchyně po rekonstrukci" },
   ],
@@ -98,7 +98,7 @@ export const property = {
     { icon: "📐", label: "63 m²" },
     { icon: "🏠", label: "3+1" },
     { icon: "🧱", label: "Cihlový dům" },
-    { icon: "🌳", label: "Zahrada s pergolou" },
+    { icon: "🔨", label: "Po rekonstrukci" },
   ],
 
   // ─── Description ──────────────────────────────────────
@@ -123,9 +123,9 @@ export const property = {
       body: "Cihlová stavba — lepší akustika i tepelná pohoda než panelové domy. Vytápění i ohřev vody plynem. Byt je po rekonstrukci, ve výborném stavu.",
     },
     {
-      icon: "🌳",
-      heading: "Zahrada s pergolou",
-      body: "K domu patří zahrada s pergolou — příjemné posezení venku. Zahrada je ve vlastnictví města, dům ji má pronajatou (hrazeno z fondu oprav) — využíváte ji bez dalších poplatků navíc.",
+      icon: "🪟",
+      heading: "Balkon a úložný prostor",
+      body: "K bytu patří balkon pro venkovní posezení, prostorný sklep a vestavěná šatna 2,8 m². Místa na věci i odpočinek je dost.",
     },
     {
       icon: "📍",
@@ -161,7 +161,7 @@ export const property = {
     { value: "Balkon", label: "+ prostorný sklep" },
     { value: "Dílna", label: "možnost využití v domě" },
     { value: "1 054 Kč", label: "Fond oprav / měsíc" },
-    { value: "Zahrada", label: "s pergolou" },
+    { value: "Šatna", label: "vestavěná · 2,8 m²" },
   ] as Parameter[],
 
   // ─── Benefits (3 categories) ──────────────────────────
@@ -225,9 +225,9 @@ export const property = {
           description: "Jen 1 054 Kč/měsíc — výrazně méně než u většiny bytů této velikosti.",
         },
         {
-          icon: "🌳",
-          title: "Zahrada s pergolou",
-          description: "Příjemné posezení venku pod pergolou. Zahrada pronajatá od města, hrazeno z fondu oprav.",
+          icon: "💡",
+          title: "Nízké náklady na provoz",
+          description: "Cihla drží teplo, fond oprav jen 1 054 Kč/měsíc, vytápění i ohřev vody úsporným plynem.",
         },
       ],
     },
@@ -247,7 +247,7 @@ export const property = {
     enabled: true,
     amount: 1054,
     context: "fond oprav · fixní měsíční náklad",
-    note: "Fond oprav (zahrnuje i nájem zahrádky od města).",
+    note: "Fond oprav.",
   },
 
   // ─── Walkthrough (cinematic "procházka bytem") ────────
@@ -299,12 +299,6 @@ export const property = {
         title: "Balkon",
         body: "Venkovní prostor přímo u bytu s výhledem do zeleně.",
       },
-      {
-        src: "/photos/zahrada-3.jpg",
-        step: "Posezení venku",
-        title: "Zahrada s pergolou",
-        body: "Příjemné venkovní posezení pod pergolou.",
-      },
     ] as WalkStep[],
   },
 
@@ -326,10 +320,9 @@ export const property = {
       ],
     },
     {
-      label: "Balkon a zahrada",
+      label: "Balkon",
       photos: [
         { src: "/photos/balkon-1.jpg", alt: "Balkon s výhledem do zeleně" },
-        { src: "/photos/zahrada-3.jpg", alt: "Zahrada s pergolou" },
       ],
     },
     {
@@ -337,7 +330,7 @@ export const property = {
       photos: [
         { src: "/photos/hero-drone.jpg", alt: "Cihlový dům s výhledem na Krušné hory — letecký pohled" },
         { src: "/photos/exterier-1.jpg", alt: "Cihlový dům Koněvova, Jirkov" },
-        { src: "/photos/exterier-3.jpg", alt: "Letecký pohled na pozemek a zahradu" },
+        { src: "/photos/exterier-3.jpg", alt: "Letecký pohled na dům a okolí" },
         { src: "/photos/exterier-2.jpg", alt: "Letecký pohled na dům a okolí" },
       ],
     },
@@ -425,11 +418,7 @@ export const property = {
     },
     {
       q: "Jaké jsou měsíční a roční náklady na provoz?",
-      a: "Fond oprav je 1 054 Kč/měsíc (zahrnuje i nájem zahrádky od města). Vytápění a ohřev vody jsou plynem — pro čtyřčlennou rodinu s malými dětmi to vychází zhruba 28 143 Kč ročně. Konkrétní spotřebu probereme na prohlídce.",
-    },
-    {
-      q: "Jak to funguje se zahrádkou?",
-      a: "Zahrádka je ve vlastnictví města a dům ji má od města pronajatou — nájem se hradí z fondu oprav, takže ji můžete využívat bez dalších poplatků navíc. Detaily rády upřesníme při prohlídce.",
+      a: "Fond oprav je 1 054 Kč/měsíc. Vytápění a ohřev vody jsou plynem — pro čtyřčlennou rodinu s malými dětmi to vychází zhruba 28 143 Kč ročně. Konkrétní spotřebu probereme na prohlídce.",
     },
     {
       q: "Mohu přijít na prohlídku ještě tento týden?",
