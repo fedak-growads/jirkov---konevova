@@ -89,7 +89,7 @@ export const property = {
   // Slideshow v hero (swipe na mobilu, auto-rotace, Ken Burns).
   heroSlides: [
     { src: "/photos/hero-drone.jpg", alt: "Cihlový dům s výhledem na Krušné hory — letecký pohled" },
-    { src: "/photos/balkon-1.jpg", alt: "Balkon s výhledem do zeleně" },
+    { src: "/photos/zahrada-1.jpg", alt: "Zahrada u domu" },
     { src: "/photos/01.jpg", alt: "Obývací pokoj s jídelním koutem" },
     { src: "/photos/03.jpg", alt: "Kuchyně po rekonstrukci" },
   ],
