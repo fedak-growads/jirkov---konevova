@@ -25,7 +25,7 @@ export default function SocialProof() {
         </Reveal>
 
         <div
-          className={`grid gap-5 ${
+          className={`grid gap-5 [&>*]:min-w-0 ${
             property.testimonials.length >= 3
               ? "md:grid-cols-3"
               : property.testimonials.length === 2

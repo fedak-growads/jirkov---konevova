@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { property } from "@/data/property";
 import { gaEvent } from "@/lib/ga";
 
@@ -23,9 +24,16 @@ function buildShareText() {
  * to the share channel (whatsapp/messenger), not to the original campaign
  * that brought the sharer here.
  */
-function buildShareUrl(channel: string): string {
-  if (typeof window === "undefined") return "";
-  const url = new URL(window.location.href);
+/** Kanonická adresa LP — deterministická, použitelná na serveru i klientovi. */
+const canonicalUrl = `https://${property.slug}.jelencicovamarie.cz/`;
+
+/**
+ * Base musí být předaný explicitně. Kdyby se sahalo na window.location
+ * přímo tady, SSR a první klientský render by se rozešly, React by href
+ * nedopatchoval a odkaz na sdílení by odešel bez URL.
+ */
+function buildShareUrl(channel: string, base: string): string {
+  const url = new URL(base);
   const utmsToStrip = [
     "utm_source",
     "utm_medium",
@@ -56,7 +64,15 @@ function track(channel: string) {
 
 export default function Share() {
   const text = buildShareText();
-  const whatsappShareUrl = buildShareUrl("whatsapp");
+  // První render (server i klient) použije kanonickou adresu; po mountu
+  // se doplní skutečná URL včetně případných parametrů.
+  const [whatsappShareUrl, setWhatsappShareUrl] = useState(() =>
+    buildShareUrl("whatsapp", canonicalUrl)
+  );
+  useEffect(
+    () => setWhatsappShareUrl(buildShareUrl("whatsapp", window.location.href)),
+    []
+  );
 
   const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(
     `${text}\n${whatsappShareUrl}`

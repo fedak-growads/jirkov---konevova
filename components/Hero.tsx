@@ -17,9 +17,12 @@ type Slide = { src: string; alt: string };
 export default function Hero() {
   const status = statusConfig[property.status];
   const formattedPrice = new Intl.NumberFormat("cs-CZ").format(property.price);
-  const pricePerM2 = Math.round(
-    property.price / parseInt(property.parameters[0].value)
+  // Užitná plocha může být desetinná s českou čárkou („40,8 m²") — parseInt
+  // by uřízl desetiny a Kč/m² by vyšlo špatně.
+  const areaM2 = parseFloat(
+    property.parameters[0].value.replace(/\s/g, "").replace(",", ".")
   );
+  const pricePerM2 = Math.round(property.price / areaM2);
   const formattedPricePerM2 = new Intl.NumberFormat("cs-CZ").format(pricePerM2);
   const area = property.parameters.find((p) => p.label === "Užitná plocha")?.value;
 
